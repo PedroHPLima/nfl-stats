@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		E3F6AED21FC8282300F7B473 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F6AED11FC8282300F7B473 /* AppDelegate.swift */; };
-		E3F6AED41FC8282300F7B473 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F6AED31FC8282300F7B473 /* ViewController.swift */; };
+		E3F6AED41FC8282300F7B473 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F6AED31FC8282300F7B473 /* SearchViewController.swift */; };
 		E3F6AED71FC8282300F7B473 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3F6AED51FC8282300F7B473 /* Main.storyboard */; };
 		E3F6AED91FC8282300F7B473 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3F6AED81FC8282300F7B473 /* Assets.xcassets */; };
 		E3F6AEDC1FC8282300F7B473 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3F6AEDA1FC8282300F7B473 /* LaunchScreen.storyboard */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		E3F6AECE1FC8282300F7B473 /* nfl-stats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nfl-stats.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3F6AED11FC8282300F7B473 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E3F6AED31FC8282300F7B473 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E3F6AED31FC8282300F7B473 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E3F6AED61FC8282300F7B473 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E3F6AED81FC8282300F7B473 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3F6AEDB1FC8282300F7B473 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				E3F6AED11FC8282300F7B473 /* AppDelegate.swift */,
-				E3F6AED31FC8282300F7B473 /* ViewController.swift */,
+				E3F6AED31FC8282300F7B473 /* SearchViewController.swift */,
 				E3F6AED51FC8282300F7B473 /* Main.storyboard */,
 				E3F6AED81FC8282300F7B473 /* Assets.xcassets */,
 				E3F6AEDA1FC8282300F7B473 /* LaunchScreen.storyboard */,
@@ -259,7 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3F6AED41FC8282300F7B473 /* ViewController.swift in Sources */,
+				E3F6AED41FC8282300F7B473 /* SearchViewController.swift in Sources */,
 				E3F6AED21FC8282300F7B473 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +427,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SWV973598N;
 				INFOPLIST_FILE = "nfl-stats/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pedrolim.nfl-stats";
@@ -441,6 +442,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SWV973598N;
 				INFOPLIST_FILE = "nfl-stats/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pedrolim.nfl-stats";
