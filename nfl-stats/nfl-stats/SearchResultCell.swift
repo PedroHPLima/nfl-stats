@@ -12,6 +12,8 @@ class SearchResultCell: UITableViewCell {
 	@IBOutlet weak var playerImage: UIImageView!
 	@IBOutlet weak var firstNameLabel: UILabel!
 	@IBOutlet weak var lastNameLabel: UILabel!
+
+	var downloadTask: URLSessionDownloadTask?
 	
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,5 +27,27 @@ class SearchResultCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+
+	// MARK:- Public Methods
+	func configure(for result: SearchResult) {
+		firstNameLabel.text = result.name
+		if result.artistName.isEmpty {
+			lastNameLabel.text = "Unknown"
+		} else {
+			lastNameLabel.text = String(format: "%@ (%@)", result.artistName)
+		}
+
+		playerImage.image = UIImage(named: "Placeholder")
+
+		if let smallURL = URL(string: result.imageSmall) {
+			downloadTask = playerImage.loadImage(url: smallURL)
+		}
+	}
+
+	override func prepareForReuse() {
+		super.prepareForReuse()
+		downloadTask?.cancel()
+		downloadTask = nil
+	}
 
 }

@@ -142,8 +142,9 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 		} else {
 			let cell = tableView.dequeueReusableCell(withIdentifier: TableViewCellIdentifiers.searchResultCell, for: indexPath) as! SearchResultCell
 			let searchResult = searchResults[indexPath.row]
-			cell.firstNameLabel.text = searchResult.name
-			cell.lastNameLabel.text = searchResult.artistName
+
+			cell.configure(for: searchResult)
+			
 			return cell
 		}
     }
