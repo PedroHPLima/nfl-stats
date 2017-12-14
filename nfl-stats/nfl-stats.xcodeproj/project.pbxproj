@@ -7,8 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E35C046C1FE27ECD0045C51D /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E35C046B1FE27ECD0045C51D /* LoadingCell.xib */; };
+		E35C046E1FE2906D0045C51D /* UIImageView_DownloadImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E35C046D1FE2906D0045C51D /* UIImageView_DownloadImage.swift */; };
+		E3EAF1AC1FE1E14E00E314B6 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EAF1AB1FE1E14E00E314B6 /* SearchResult.swift */; };
+		E3EAF1AE1FE1EB0300E314B6 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3EAF1AD1FE1EB0300E314B6 /* SearchResultCell.xib */; };
+		E3EAF1B01FE1F01500E314B6 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EAF1AF1FE1F01500E314B6 /* SearchResultCell.swift */; };
+		E3EAF1B21FE1F4E600E314B6 /* NothingFoundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3EAF1B11FE1F4E600E314B6 /* NothingFoundCell.xib */; };
 		E3F6AED21FC8282300F7B473 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F6AED11FC8282300F7B473 /* AppDelegate.swift */; };
-		E3F6AED41FC8282300F7B473 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F6AED31FC8282300F7B473 /* ViewController.swift */; };
+		E3F6AED41FC8282300F7B473 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3F6AED31FC8282300F7B473 /* SearchViewController.swift */; };
 		E3F6AED71FC8282300F7B473 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3F6AED51FC8282300F7B473 /* Main.storyboard */; };
 		E3F6AED91FC8282300F7B473 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3F6AED81FC8282300F7B473 /* Assets.xcassets */; };
 		E3F6AEDC1FC8282300F7B473 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3F6AEDA1FC8282300F7B473 /* LaunchScreen.storyboard */; };
@@ -34,9 +40,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E35C046B1FE27ECD0045C51D /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
+		E35C046D1FE2906D0045C51D /* UIImageView_DownloadImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView_DownloadImage.swift; sourceTree = "<group>"; };
+		E3EAF1AB1FE1E14E00E314B6 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
+		E3EAF1AD1FE1EB0300E314B6 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
+		E3EAF1AF1FE1F01500E314B6 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
+		E3EAF1B11FE1F4E600E314B6 /* NothingFoundCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NothingFoundCell.xib; sourceTree = "<group>"; };
 		E3F6AECE1FC8282300F7B473 /* nfl-stats.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "nfl-stats.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E3F6AED11FC8282300F7B473 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E3F6AED31FC8282300F7B473 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E3F6AED31FC8282300F7B473 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		E3F6AED61FC8282300F7B473 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E3F6AED81FC8282300F7B473 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E3F6AEDB1FC8282300F7B473 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -98,11 +110,17 @@
 			isa = PBXGroup;
 			children = (
 				E3F6AED11FC8282300F7B473 /* AppDelegate.swift */,
-				E3F6AED31FC8282300F7B473 /* ViewController.swift */,
+				E3F6AED31FC8282300F7B473 /* SearchViewController.swift */,
 				E3F6AED51FC8282300F7B473 /* Main.storyboard */,
 				E3F6AED81FC8282300F7B473 /* Assets.xcassets */,
 				E3F6AEDA1FC8282300F7B473 /* LaunchScreen.storyboard */,
 				E3F6AEDD1FC8282300F7B473 /* Info.plist */,
+				E3EAF1AB1FE1E14E00E314B6 /* SearchResult.swift */,
+				E3EAF1AD1FE1EB0300E314B6 /* SearchResultCell.xib */,
+				E3EAF1AF1FE1F01500E314B6 /* SearchResultCell.swift */,
+				E3EAF1B11FE1F4E600E314B6 /* NothingFoundCell.xib */,
+				E35C046B1FE27ECD0045C51D /* LoadingCell.xib */,
+				E35C046D1FE2906D0045C51D /* UIImageView_DownloadImage.swift */,
 			);
 			path = "nfl-stats";
 			sourceTree = "<group>";
@@ -234,6 +252,9 @@
 			files = (
 				E3F6AEDC1FC8282300F7B473 /* LaunchScreen.storyboard in Resources */,
 				E3F6AED91FC8282300F7B473 /* Assets.xcassets in Resources */,
+				E35C046C1FE27ECD0045C51D /* LoadingCell.xib in Resources */,
+				E3EAF1AE1FE1EB0300E314B6 /* SearchResultCell.xib in Resources */,
+				E3EAF1B21FE1F4E600E314B6 /* NothingFoundCell.xib in Resources */,
 				E3F6AED71FC8282300F7B473 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -259,8 +280,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E3F6AED41FC8282300F7B473 /* ViewController.swift in Sources */,
+				E3F6AED41FC8282300F7B473 /* SearchViewController.swift in Sources */,
+				E3EAF1AC1FE1E14E00E314B6 /* SearchResult.swift in Sources */,
+				E3EAF1B01FE1F01500E314B6 /* SearchResultCell.swift in Sources */,
 				E3F6AED21FC8282300F7B473 /* AppDelegate.swift in Sources */,
+				E35C046E1FE2906D0045C51D /* UIImageView_DownloadImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,6 +451,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SWV973598N;
 				INFOPLIST_FILE = "nfl-stats/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pedrolim.nfl-stats";
@@ -441,6 +466,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SWV973598N;
 				INFOPLIST_FILE = "nfl-stats/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.pedrolim.nfl-stats";
