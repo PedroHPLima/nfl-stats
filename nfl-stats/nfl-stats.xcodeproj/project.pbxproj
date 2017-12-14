@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E35C046C1FE27ECD0045C51D /* LoadingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E35C046B1FE27ECD0045C51D /* LoadingCell.xib */; };
 		E3EAF1AC1FE1E14E00E314B6 /* SearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EAF1AB1FE1E14E00E314B6 /* SearchResult.swift */; };
 		E3EAF1AE1FE1EB0300E314B6 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3EAF1AD1FE1EB0300E314B6 /* SearchResultCell.xib */; };
 		E3EAF1B01FE1F01500E314B6 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3EAF1AF1FE1F01500E314B6 /* SearchResultCell.swift */; };
@@ -38,6 +39,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E35C046B1FE27ECD0045C51D /* LoadingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoadingCell.xib; sourceTree = "<group>"; };
 		E3EAF1AB1FE1E14E00E314B6 /* SearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResult.swift; sourceTree = "<group>"; };
 		E3EAF1AD1FE1EB0300E314B6 /* SearchResultCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
 		E3EAF1AF1FE1F01500E314B6 /* SearchResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 				E3EAF1AD1FE1EB0300E314B6 /* SearchResultCell.xib */,
 				E3EAF1AF1FE1F01500E314B6 /* SearchResultCell.swift */,
 				E3EAF1B11FE1F4E600E314B6 /* NothingFoundCell.xib */,
+				E35C046B1FE27ECD0045C51D /* LoadingCell.xib */,
 			);
 			path = "nfl-stats";
 			sourceTree = "<group>";
@@ -246,6 +249,7 @@
 			files = (
 				E3F6AEDC1FC8282300F7B473 /* LaunchScreen.storyboard in Resources */,
 				E3F6AED91FC8282300F7B473 /* Assets.xcassets in Resources */,
+				E35C046C1FE27ECD0045C51D /* LoadingCell.xib in Resources */,
 				E3EAF1AE1FE1EB0300E314B6 /* SearchResultCell.xib in Resources */,
 				E3EAF1B21FE1F4E600E314B6 /* NothingFoundCell.xib in Resources */,
 				E3F6AED71FC8282300F7B473 /* Main.storyboard in Resources */,
