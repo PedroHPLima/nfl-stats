@@ -34,7 +34,7 @@ class SearchResultCell: UITableViewCell {
 		if result.artistName.isEmpty {
 			lastNameLabel.text = "Unknown"
 		} else {
-			lastNameLabel.text = String(format: "%@ (%@)", result.artistName)
+			lastNameLabel.text = String(format: "%@", result.artistName)
 		}
 
 		playerImage.image = UIImage(named: "Placeholder")
