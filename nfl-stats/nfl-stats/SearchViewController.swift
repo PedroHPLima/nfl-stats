@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class SearchViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
@@ -14,7 +16,12 @@ class SearchViewController: UIViewController {
     var searchResults = [SearchResult]()
     var hasSearched = false
 	var isLoading = false
-	var dataTask: URLSessionDataTask?
+	let disposeBag = DisposeBag()
+
+	struct Results {
+		let songName: String
+		let artistName: String
+	}
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,28 +40,34 @@ class SearchViewController: UIViewController {
 		tableView.register(cellNib, forCellReuseIdentifier: TableViewCellIdentifiers.loadingCell)
 
 		searchBar.becomeFirstResponder()
+
+		rxSetup()
     }
 
+	func rxSetup() {
+		let results = searchBar.rx.text.orEmpty
+			.throttle(0.5, scheduler: MainScheduler.instance)
+			.distinctUntilChanged()
+			.flatMapLatest { query -> Observable<[SearchResult]> in
+				if query.isEmpty {
+					return .just([])
+				}
+				return ApiController.shared.search(search: query)
+					.catchErrorJustReturn([])
+			}
+			.observeOn(MainScheduler.instance)
+
+		results
+			.bind(to: tableView.rx.items(cellIdentifier: TableViewCellIdentifiers.searchResultCell, cellType: SearchResultCell.self)) {
+				(index, searchResult: SearchResult, cell) in
+				cell.configure(for: searchResult)
+			}
+			.disposed(by: disposeBag)
+
+	}
+	
 	// MARK:- Private Methods
-	// Change method name and the url
-	func iTunesURL(searchText: String) -> URL {
-		let encodedText = searchText.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
-		let urlString = String(format:"https://itunes.apple.com/search?term=%@", encodedText)
-		let url = URL(string: urlString)
-		return url!
-	}
-
-	func parse(data: Data) -> [SearchResult] {
-		do {
-			let decoder = JSONDecoder()
-			let result = try decoder.decode(ResultArray.self, from:data)
-			return result.results
-		} catch {
-			print("JSON Error: \(error)")
-			return []
-		}
-	}
-
+	
 	func showNetworkError() {
 		let alert = UIAlertController(title: "Whoops...", message: "There was an error accessing the iTunes Store. Please try again.", preferredStyle: .alert)
 
@@ -71,47 +84,6 @@ class SearchViewController: UIViewController {
 }
 
 extension SearchViewController: UISearchBarDelegate {
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        if !searchBar.text!.isEmpty {
-			searchBar.resignFirstResponder()
-			dataTask?.cancel()
-			isLoading = true
-			tableView.reloadData()
-			hasSearched = true
-			searchResults = []
-
-			let url = iTunesURL(searchText: searchBar.text!)
-			let session = URLSession.shared
-
-			dataTask = session.dataTask(with: url) { data, response, error in
-				if let error = error as NSError?, error.code == -999 {
-					return
-				} else if let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 {
-					if let data = data {
-						self.searchResults = self.parse(data: data)
-						self.searchResults.sort(by: <)
-						DispatchQueue.main.async {
-							self.isLoading = false
-							self.tableView.reloadData()
-						}
-						return
-					}
-				} else {
-					print("Failure! \(response!)")
-				}
-
-				DispatchQueue.main.async {
-					self.hasSearched = false
-					self.isLoading = false
-					self.tableView.reloadData()
-					self.showNetworkError()
-				}
-			}
-			
-			dataTask?.resume()
-		}
-    }
-
     func position(for bar: UIBarPositioning) -> UIBarPosition {
         return .topAttached
     }
@@ -144,7 +116,7 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
 			let searchResult = searchResults[indexPath.row]
 
 			cell.configure(for: searchResult)
-			
+
 			return cell
 		}
     }

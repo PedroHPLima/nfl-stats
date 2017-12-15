@@ -26,7 +26,7 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="8Jx-j8-9j8"/>
                                 </connections>
                             </tableView>
-                            <searchBar contentMode="redraw" placeholder="Player name, team, week results" translatesAutoresizingMaskIntoConstraints="NO" id="B7w-vA-QPR">
+                            <searchBar contentMode="redraw" placeholder="Song name, artist, album, book" translatesAutoresizingMaskIntoConstraints="NO" id="B7w-vA-QPR">
                                 <rect key="frame" x="0.0" y="20" width="320" height="56"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
